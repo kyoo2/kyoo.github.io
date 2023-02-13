@@ -1,0 +1,91 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    animation: animate 16s ease-in-out infinite;
+}
+@keyframes animate{
+    0%{
+        background-image: url(1.jpg);
+        background-position: center;
+    }
+    25% {
+        background-image: url(2.jpg);
+    }
+    50% {
+        background-image: url(3.jpg);
+    }
+    75% {
+        background-image: url(4.jpg);
+    }
+    100% {
+        background-image: url(5.jpg);
+        background-position: center;
+    }
+}
+
+.ilove{
+    display: inline-flex;
+}
+.ilove .static-txt{
+    color: #fff;
+    font-size: 90px;
+    font-weight: 400;
+    animation:blink 5s linear forwards;
+}
+
+.ilove .dynamic-txts{
+margin-left: 15px;
+height: 90px;
+line-height: 90px;
+overflow: hidden;
+
+}
+
+.dynamic-txts li {
+    color: #fc6060;
+    list-style: none;
+    font-size: 50px;
+    font-weight: 50px;
+    top: 0;
+    position: relative;
+    animation: slide 5.5s steps(100) infinite;
+}
+@keyframes slide {
+    100%{
+        top: -710px;
+    }
+    
+}
+
+.dynamic-txts li span{
+    position: relative;
+}
+
+.dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    border-left: 4px solid white;
+    animation: typing 1s steps(50) infinite;
+}
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+    
+}
+
+@keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: .5;};
+    100%{opacity: 1;}
+}
+
+.message .h1{
+    text-align: right;
+}
